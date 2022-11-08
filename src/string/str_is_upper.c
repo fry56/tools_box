@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include "../../includes/tstring.h"
+#include "includes/tstring.h"
 
 int tstr_is_upper(char const *str)
 {

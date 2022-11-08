@@ -5,11 +5,11 @@
 ** desc
 */
 
-#include <tctype.h>
+#include "../include/tctype.h"
 #include <unistd.h>
-#include <tstring.h>
+#include "../include/tstring.h"
 
 tsize_t twrite(int fb, char *buffer)
 {
-    return (write(fb, &buffer, tstr_len(buffer)));
+    return (write(fb, buffer, tstr_len(buffer)));
 }

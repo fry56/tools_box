@@ -9,6 +9,8 @@ SRC = \
     math/int_is_prime.c \
     math/int_is_prime.c \
     math/int_power.c \
+    math/double_len.c \
+    math/int_len.c \
     math/int_square.c \
     math/double_abs.c \
     math/double_modulo.c \

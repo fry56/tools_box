@@ -19,7 +19,6 @@ char *tstr_cpy(char *dest, char const *src)
     return dest;
 }
 
-
 char *tstr_ncpy(char *dest, char const *src, int n)
 {
     int i;

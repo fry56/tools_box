@@ -54,7 +54,7 @@ static int get_nbr(char const *str, int digit_start, int sign)
     return nbr / 10;
 }
 
-int int_get_nbr(char const *str)
+int str_get_nbr(char const *str)
 {
     int digit_start = have_digits(str);
     int sign = 0;

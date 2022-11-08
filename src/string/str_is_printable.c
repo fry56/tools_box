@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include <tstring.h>
+#include "../../includes/tstring.h"
 
 int tstr_is_printable(char const *str)
 {

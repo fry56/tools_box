@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include <tstring.h>
+#include "../../includes/tstring.h"
 
 static int str_cmpn(char const *str, int n)
 {

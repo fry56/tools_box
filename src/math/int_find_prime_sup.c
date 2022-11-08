@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include <tmath.h>
+#include "../../includes/tmath.h"
 
 int my_find_prime_sup(int nb)
 {

@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include <tctype.h>
+#include "../../includes/tctype.h"
 
 void *tmemset(void *dest, int value, tsize_t size)
 {

@@ -5,9 +5,9 @@
 ** desc
 */
 
-#include "../include/tctype.h"
+#include "../../includes/tctype.h"
 #include <unistd.h>
-#include "../include/tstring.h"
+#include "../../includes/tstring.h"
 
 tsize_t twrite(int fb, char *buffer)
 {

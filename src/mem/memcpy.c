@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include <tctype.h>
+#include "../../includes/tctype.h"
 
 void *tmemcpy(void *dest, const void *src, tsize_t size)
 {

@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include <tstring.h>
+#include "../../includes/tstring.h"
 
 char *tstr_cpy(char *dest, char const *src)
 {

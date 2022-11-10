@@ -4,9 +4,9 @@
 ## File description:
 ## desc
 ##
-SRC = \
+
+LIB_SRC = \
 	src/math/int_find_prime_sup.c \
-    src/math/int_is_prime.c \
     src/math/int_is_prime.c \
     src/math/int_power.c \
     src/math/double_len.c \
@@ -47,25 +47,42 @@ SRC = \
 	src/string/str_to_word_array.c \
 	src/write/write.c
 
-OBJ = $(SRC:.c=.o)
+TEST_SRC = \
+	tests/redirect_all_std.c \
+	tests/tprintf/tests_tprintf_d.c \
+	tests/tprintf/tests_tprintf_f.c \
+	tests/tprintf/tests_tprintf_multiple.c \
+	tests/tprintf/tests_tprintf_s.c
+
+LIB_OBJ = $(LIB_SRC:.c=.o)
+TEST_OBJ = $(TEST_SRC:.c=.o)
+
 LIB = tool_box.a
+TEST = tests_tool_box.a
 
 INCLUDES = -I ../include
 CFLAGS += -Wall -Wextra $(INCLUDES)
 
 all: $(LIB)
 
-$(LIB): $(OBJ)
-	ar cr $(LIB) $(OBJ)
+$(LIB): $(LIB_OBJ)
+	ar cr $(LIB) $(LIB_OBJ)
 	cp $(LIB) ../
 	cp includes/*.h ../../includes/
 
+build:$(LIB_OBJ)
+	ar cr $(LIB) $(LIB_OBJ)
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(LIB_OBJ) $(TEST_OBJ)
 
 fclean: clean
-	rm -f $(LIB)
+	rm -f $(LIB) $(TEST)
+
+run_test: $(LIB_OBJ) $(TEST_OBJ)
+	gcc -o $(TEST) $(LIB_OBJ) $(TEST_OBJ)  -I includes/ --coverage -lcriterion
+	./$(TEST)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re build run_test

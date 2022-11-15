@@ -12,7 +12,7 @@ void *tcalloc(tsize_t tmem, tsize_t size)
 {
     void *pointer = malloc(size * tmem);
 
-    if (pointer != NULL)
+    if (pointer)
         tmemset(pointer, 0, size * tmem);
     return pointer;
 }

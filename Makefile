@@ -32,6 +32,7 @@ LIB_SRC = \
     src/char/char_is_upper.c \
     src/char/char_lower.c \
     src/string/str_get_nbr.c \
+    src/string/str_alpha_cmp.c \
 	src/string/str_case_lower.c \
 	src/string/str_case_upper.c \
 	src/string/str_cmp.c \

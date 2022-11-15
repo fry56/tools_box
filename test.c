@@ -5,18 +5,13 @@
 ** desc
 */
 
-#include "includes/ttable.c.h"
+#include "includes/ttable.h"
+#include "tprintf.h"
 #include <stdlib.h>
 
 int main(void)
 {
-    char **table = malloc(sizeof(char *) * 4);
-
-    for (int i = 0; i < 3; i++) {
-        table[i] = malloc(sizeof(char ) * 5);
-    }
-
-    free_table_dd((void **)table, 1, true);
+    tprintf("%c %d HELLO", 'A', 12);
 
     return 0;
 }

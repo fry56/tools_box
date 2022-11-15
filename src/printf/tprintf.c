@@ -44,8 +44,9 @@ int tprintf(char *format, ...)
         if (*format == '%') {
             find_flag(*(format + 1), args);
             format++;
-        } else
-            twrite(1, format);
+        } else {
+            write(1, &(*format), 1);
+        }
     }
     va_end(args);
     return 0;

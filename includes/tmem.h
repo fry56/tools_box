@@ -12,4 +12,5 @@
     void *memmove(void *dest, const void *src, tsize_t size);
     void *tmemcpy(void *dest, const void *src, tsize_t size);
     void *tcalloc(tsize_t tmem, tsize_t size);
+    void *trealloc(void *tmem, tsize_t size, tsize_t new_size);
 #endif //TOOLS_BOX_TMEM_H

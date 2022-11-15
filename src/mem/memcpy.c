@@ -9,10 +9,16 @@
 
 void *tmemcpy(void *dest, const void *src, tsize_t size)
 {
-    const u8 *src_pointer = (u8 *)src;
-    u8 *dest_pointer = (u8 *)dest;
+    const u8 *sp;
+    u8 *dp;
 
-    while (--size > 0)
-        *dest_pointer++ = *src_pointer++;
+    if (dest == NULL || src == NULL)
+        return NULL;
+    sp = (const u8 *)src;
+    dp = (u8 *)dest;
+    while (size) {
+        *dp++ = *sp++;
+        size--;
+    }
     return dest;
 }

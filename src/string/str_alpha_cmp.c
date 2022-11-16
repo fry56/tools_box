@@ -4,8 +4,7 @@
 ** File description:
 ** desc
 */
-
-extern char *swap(char *str_a, char *str_b)
+char *swap(char *str_a, char *str_b)
 {
     char *temp;
     for (; *str_a != '\0' && *str_b != '\0' ; str_a += 1, str_b += 1) {

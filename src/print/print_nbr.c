@@ -24,6 +24,8 @@ int print_nbr(long long nb)
     int i = 0;
     int count;
 
+    if (nb == 0)
+        twrite(1, "0");
     for (; nb / 10 != 0; i++) {
         number[i] = abs(nb % 10);
         nb = nb / 10;

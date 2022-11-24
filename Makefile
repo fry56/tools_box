@@ -50,11 +50,6 @@ LIB_SRC = \
 	src/write/write.c
 
 TEST_SRC = \
-	tests/redirect_all_std.c \
-	tests/tprintf/tests_tprintf_d.c \
-	tests/tprintf/tests_tprintf_f.c \
-	tests/tprintf/tests_tprintf_multiple.c \
-	tests/tprintf/tests_tprintf_s.c
 
 LIB_OBJ = $(LIB_SRC:.c=.o)
 TEST_OBJ = $(TEST_SRC:.c=.o)

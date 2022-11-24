@@ -70,6 +70,8 @@ $(LIB): $(LIB_OBJ)
 	ar cr $(LIB) $(LIB_OBJ)
 	cp $(LIB) ../
 	cp includes/*.h ../../includes/
+	rm -f $(LIB) $(TEST)
+	rm -f $(LIB_OBJ) $(TEST_OBJ)
 
 build:$(LIB_OBJ)
 	ar cr $(LIB) $(LIB_OBJ)

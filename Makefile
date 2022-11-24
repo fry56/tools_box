@@ -43,6 +43,7 @@ LIB_SRC = \
 	src/string/str_is_printable.c \
 	src/string/str_is_upper.c \
 	src/string/str_len.c \
+	src/string/str_contain.c \
 	src/string/str_rev.c \
 	src/string/str_str.c \
 	src/string/str_to_word_array.c \

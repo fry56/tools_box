@@ -6,7 +6,7 @@
 */
 #ifndef TOOLS_BOX_TSTRING_H
     #define TOOLS_BOX_TSTRING_H
-
+    #include "tctype.h"
     char *tstr_case_lower(char *str);
     char *tstr_case_upper(char *str);
     int tstr_cmp(char const *s1, char const *s2);
@@ -23,4 +23,5 @@
     char *tstr_str(char *str, char const *to_find);
     char **tstr_to_word_array(char const *str);
     int str_get_nbr(char const *str);
+    bool tstr_contain_only(char *str, char *char_list);
 #endif //TOOLS_BOX_TSTRING_H

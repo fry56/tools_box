@@ -14,25 +14,29 @@ LIB_SRC = \
     src/math/int_square.c \
     src/math/double_abs.c \
     src/math/double_modulo.c \
+    \
     src/mem/calloc.c \
     src/mem/memcpy.c \
     src/mem/memmove.c \
     src/mem/memset.c \
     src/mem/realloc.c \
+    \
     src/print/print_float.c \
 	src/print/print_nbr.c \
 	src/print/print_nbr_base.c \
+	\
     src/printf/tprintf.c \
     src/printf/flags_functions/char.c \
 	src/printf/flags_functions/float.c \
 	src/printf/flags_functions/int.c \
 	src/printf/flags_functions/modulo.c \
 	src/printf/flags_functions/string.c \
+	\
     src/char/char_is_digit.c \
     src/char/char_is_upper.c \
     src/char/char_lower.c \
+    \
     src/string/str_get_nbr.c \
-    src/string/str_alpha_cmp.c \
 	src/string/str_case_lower.c \
 	src/string/str_case_upper.c \
 	src/string/str_cmp.c \
@@ -47,41 +51,37 @@ LIB_SRC = \
 	src/string/str_rev.c \
 	src/string/str_str.c \
 	src/string/str_to_word_array.c \
+	\
 	src/write/write.c
 
-TEST_SRC = \
+LIB = tools_box.a
+OBJ_LIB = $(LIB_SRC:.c=.o)
 
-LIB_OBJ = $(LIB_SRC:.c=.o)
-TEST_OBJ = $(TEST_SRC:.c=.o)
+GCC = gcc
 
-LIB = tool_box.a
-TEST = tests_tool_box.a
+C_WARNING_FLAGS = -Wextra -Wall
 
-INCLUDES = -I ../include
-CFLAGS += -Wall -Wextra $(INCLUDES)
+INCLUDE_FLAGS = -I includes
 
-all: $(LIB)
+C_FLAGS = $(C_WARNING_FLAGS) $(INCLUDE_FLAGS)
 
-$(LIB): $(LIB_OBJ)
-	ar cr $(LIB) $(LIB_OBJ)
+.c.o:
+	@echo "$(notdir $(CURDIR)): C '$<'"
+	@$(GCC) $(C_FLAGS) -c -o $*.o $<
+
+all: $(OBJ_LIB)
+	@ar rc $(LIB) $(OBJ_LIB)
 	cp $(LIB) ../
-	cp includes/*.h ../../includes/
-	rm -f $(LIB) $(TEST)
-	rm -f $(LIB_OBJ) $(TEST_OBJ)
+	mkdir ../../includes/tools_box
+	cp includes/*.h ../../includes/tools_box/
+	@find . \( -name "*.o" -or -name "*.a" \) -delete
+.PHONY : all
 
-build:$(LIB_OBJ)
-	ar cr $(LIB) $(LIB_OBJ)
+build: $(OBJ_LIB)
+	@ar rc $(LIB) $(OBJ_LIB)
+	@find . \( -name "*.o" -or -name "*.a" \) -delete
+.PHONY : all
 
 clean:
-	rm -f $(LIB_OBJ) $(TEST_OBJ)
-
-fclean: clean
-	rm -f $(LIB) $(TEST)
-
-run_test: $(LIB_OBJ) $(TEST_OBJ)
-	gcc -o $(TEST) $(LIB_OBJ) $(TEST_OBJ)  -I includes/ --coverage -lcriterion
-	./$(TEST)
-
-re: fclean all
-
-.PHONY: all clean fclean re build run_test
+	@find . \( -name "*.o" -or -name "*.a" \) -delete
+.PHONY : clean

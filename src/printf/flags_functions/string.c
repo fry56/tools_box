@@ -5,8 +5,8 @@
 ** desc
 */
 
-#include "../../../includes/tprintf.h"
-#include "../../../includes/twrite.h"
+#include <t_printf.h>
+#include <t_write.h>
 #include <stdarg.h>
 
 void string_flag(va_list args)

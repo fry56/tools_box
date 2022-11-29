@@ -5,8 +5,8 @@
 ** Converts and displays a decimal number into a number in a given base.
 */
 
-#include "../../includes/twrite.h"
-#include "../../includes/tstring.h"
+#include <t_write.h>
+#include <t_string.h>
 
 int print_base(int const *nbr_base, int i, char *base)
 {

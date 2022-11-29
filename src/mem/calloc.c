@@ -5,8 +5,8 @@
 ** desc
 */
 
-#include "../../includes/tctype.h"
-#include "../../includes/tmem.h"
+#include <t_ctype.h>
+#include <t_mem.h>
 
 void *tcalloc(tsize_t tmem, tsize_t size)
 {

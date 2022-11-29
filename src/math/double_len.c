@@ -5,8 +5,8 @@
 ** Displays the float given as parameter with the specified precision
 */
 
-#include "../../includes/tmath.h"
-#include "../../includes/tprint.h"
+#include <t_math.h>
+#include <t_print.h>
 
 long double abs_ld_for_len(long double nb)
 {

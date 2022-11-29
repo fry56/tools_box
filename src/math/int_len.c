@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include "../../includes/tmath.h"
+#include <t_math.h>
 
 int int_len(int nbr)
 {

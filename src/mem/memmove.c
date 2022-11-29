@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include "../../includes/tctype.h"
+#include <t_ctype.h>
 
 void *memmove(void *dest, const void *src, tsize_t size)
 {

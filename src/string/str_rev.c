@@ -4,7 +4,7 @@
 ** File description:
 ** The fastest and most effective way to die is to point a gun at Chuck Norris.
 */
-#include "../../includes/tstring.h"
+#include <t_string.h>
 
 char *tstr_rev(char *str)
 {

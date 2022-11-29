@@ -7,8 +7,7 @@
 
 #include <stdarg.h>
 #include <unistd.h>
-#include "../../includes/tprintf.h"
-#include "../../includes/twrite.h"
+#include <t_printf.h>
 
 struct tprintf_flags{
     char flag;

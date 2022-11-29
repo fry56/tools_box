@@ -5,8 +5,8 @@
 ** desc
 */
 
-#include "../../includes/tctype.h"
-#include "../../includes/tstring.h"
+#include <t_ctype.h>
+#include <t_string.h>
 
 bool tstr_contain_only(char *str, char *char_list)
 {

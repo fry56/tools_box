@@ -6,7 +6,7 @@
 */
 #ifndef TOOLS_BOX_TMEM_H
     #define TOOLS_BOX_TMEM_H
-    #include "tctype.h"
+    #include "t_ctype.h"
     #include <stdlib.h>
     void *tmemset(void *dest, int value, tsize_t size);
     void *memmove(void *dest, const void *src, tsize_t size);

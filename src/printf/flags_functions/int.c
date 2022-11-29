@@ -6,8 +6,7 @@
 */
 
 #include <stdarg.h>
-#include "../../../includes/tprint.h"
-#include "../../../includes/tprintf.h"
+#include <t_print.h>
 
 void int_flag(va_list args)
 {

@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include "../../includes/tstring.h"
+#include <t_string.h>
 
 int tstr_is_lower(char const *str)
 {

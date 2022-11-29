@@ -5,8 +5,8 @@
 ** Displays the number given as parameter
 */
 
-#include "../../includes/twrite.h"
-#include "../../includes/tmath.h"
+#include <t_write.h>
+#include <t_math.h>
 
 int print_nbr_data(int const *number, int i, int count)
 {

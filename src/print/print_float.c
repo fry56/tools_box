@@ -5,8 +5,8 @@
 ** Displays the float given as parameter with the specified precision
 */
 
-#include "../../includes/twrite.h"
-#include "../../includes/tmath.h"
+#include <t_write.h>
+#include <t_math.h>
 
 long double fl_prec(long double nb, int precision)
 {

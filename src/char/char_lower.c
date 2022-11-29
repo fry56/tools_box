@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include "../../includes/tchar.h"
+#include <t_char.h>
 
 char char_lower(char c)
 {

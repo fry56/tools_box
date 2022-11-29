@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include "../../includes/tctype.h"
+#include <t_ctype.h>
 
 bool char_is_upper(char c)
 {

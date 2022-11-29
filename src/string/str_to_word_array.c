@@ -9,9 +9,8 @@
 
 static int is_alpha(char src)
 {
-    if (!(src >= 'a' && src <= 'z') && !(src >= 'A' && src <= 'Z')) {
+    if (!(src >= 'a' && src <= 'z') && !(src >= 'A' && src <= 'Z'))
         return 0;
-    }
     return 1;
 }
 
@@ -32,9 +31,8 @@ static int get_size_of_word(char const *str, int index)
     int i = 0;
     int nbr = 0;
 
-    for (i = index; is_alpha(str[i]) == 1 && str[i] != '\0'; i++) {
+    for (i = index; is_alpha(str[i]) == 1 && str[i] != '\0'; i++)
         nbr++;
-    }
     return nbr + 1;
 }
 
@@ -43,6 +41,7 @@ char **tstr_to_word_array(char const *str)
     int a = 0;
     int b = 0;
     char **arr = malloc(sizeof(char*) * get_nbr_of_word(str) + 1);
+
     arr[a] = malloc(sizeof(char) * get_size_of_word(str, 0));
     for (int i = 0; str[i] != '\0'; i++) {
         if (is_alpha(str[i]) == 0 && is_alpha(str[i - 1])) {

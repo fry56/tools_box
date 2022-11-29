@@ -6,7 +6,7 @@
 */
 #ifndef TOOLS_BOX_TSTRING_H
     #define TOOLS_BOX_TSTRING_H
-    #include "tctype.h"
+    #include "t_ctype.h"
     char *tstr_case_lower(char *str);
     char *tstr_case_upper(char *str);
     int tstr_cmp(char const *s1, char const *s2);

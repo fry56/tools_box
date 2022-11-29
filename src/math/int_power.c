@@ -5,7 +5,7 @@
 ** desc
 */
 
-#include "../../includes/tctype.h"
+#include <t_ctype.h>
 #include <limits.h>
 
 int int_power(int nb, int p)

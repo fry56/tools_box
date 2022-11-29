@@ -7,7 +7,7 @@
 #ifndef TOOLS_BOX_TWRITE_H
     #define TOOLS_BOX_TWRITE_H
 
-    #include "tctype.h"
+    #include "t_ctype.h"
 
     tsize_t twrite(int fb, char *buffer);
 

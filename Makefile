@@ -52,7 +52,13 @@ LIB_SRC = \
 	src/string/str_str.c \
 	src/string/str_to_word_array.c \
 	\
-	src/write/write.c
+	src/write/write.c \
+	\
+	src/map/map_add.c \
+	src/map/map_get.c \
+	src/map/map_new.c \
+	src/map/map_remove.c \
+	src/map/map_set.c
 
 LIB = tools_box.a
 OBJ_LIB = $(LIB_SRC:.c=.o)

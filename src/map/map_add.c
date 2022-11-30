@@ -27,11 +27,13 @@ void map_add_node(t_map *map, t_map_node *node)
     map->tail = node;
 }
 
-t_map_node *tmap_add(t_map *map, char *key, tsize_t *value)
+t_map_node *tmap_add(t_map *map, char *key, void *value)
 {
     t_map_node *node;
 
-    if(map == NULL || key == NULL)
+    if (map == NULL || key == NULL)
+        return NULL;
+    if (tmap_get(map, key) != NULL)
         return NULL;
     if ((node = tcalloc(1, sizeof(t_map_node))) == NULL)
         return NULL;

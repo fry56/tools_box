@@ -28,7 +28,7 @@
 
     t_map *tmap_new(void);
     t_map_node *tmap_get(t_map *map, char *key);
-    t_map_node *tmap_add(t_map *map, char *key, tsize_t *value);
+    t_map_node *tmap_add(t_map *map, char *key, void *value);
     bool tmap_remove(t_map *map, char *key);
     t_map_node *tmap_set(t_map *map, char *key, void *value);
 #endif //t_map

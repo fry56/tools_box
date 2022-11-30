@@ -5,7 +5,7 @@
 ## desc
 ##
 
-LIB_SRC = \
+SRC = \
 	src/math/int_find_prime_sup.c \
     src/math/int_is_prime.c \
     src/math/int_power.c \
@@ -66,31 +66,26 @@ LIB_SRC = \
 	src/list/list_remove.c \
 	src/list/list_pop.c
 
-
-LIB = tools_box.a
-OBJ_LIB = $(LIB_SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 GCC = gcc
 
+INCLUDE_FLAGS = \
+	-I include
+
 C_WARNING_FLAGS = -Wextra -Wall
-
-INCLUDE_FLAGS = -I includes
-
 C_FLAGS = $(C_WARNING_FLAGS) $(INCLUDE_FLAGS)
 
 .c.o:
 	@echo "$(notdir $(CURDIR)): C '$<'"
 	@$(GCC) $(C_FLAGS) -c -o $*.o $<
 
-all: $(OBJ_LIB)
-	@ar rc $(LIB) $(OBJ_LIB)
-	@find . \( -name "*.o" \) -delete
+all: tools_box.a
 .PHONY : all
 
-build: $(OBJ_LIB)
-	@ar rc $(LIB) $(OBJ_LIB)
-	@find . \( -name "*.o" -or -name "*.a" \) -delete
-.PHONY : all
+tools_box.a: $(OBJ)
+	@ar rc $@ $(OBJ)
+.PHONY : tools_box.a
 
 clean:
 	@find . \( -name "*.o" -or -name "*.a" \) -delete

@@ -77,7 +77,7 @@ C_FLAGS = $(C_WARNING_FLAGS) $(INCLUDE_FLAGS)
 
 all: $(OBJ_LIB)
 	@ar rc $(LIB) $(OBJ_LIB)
-	@find . \( -name "*.o" -or -name "*.a" \) -delete
+	@find . \( -name "*.o" \) -delete
 .PHONY : all
 
 build: $(OBJ_LIB)

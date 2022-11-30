@@ -58,7 +58,13 @@ LIB_SRC = \
 	src/map/map_get.c \
 	src/map/map_new.c \
 	src/map/map_remove.c \
-	src/map/map_set.c
+	src/map/map_set.c \
+	\
+	src/list/list_add.c \
+	src/list/list_get.c \
+	src/list/list_new.c \
+	src/list/list_remove.c
+
 
 LIB = tools_box.a
 OBJ_LIB = $(LIB_SRC:.c=.o)

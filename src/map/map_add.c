@@ -38,6 +38,7 @@ t_map_node *tmap_add(t_map *map, char *key, void *value)
     if ((node = tcalloc(1, sizeof(t_map_node))) == NULL)
         return NULL;
     node->value = value;
+    node->key = malloc(tstr_len(key) + 2);
     tstr_cpy(node->key, key);
     map_add_node(map, node);
     return node;

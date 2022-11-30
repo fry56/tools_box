@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <t_mem.h>
 
-t_list *tmap_new(void)
+t_list *tlist_new(void)
 {
     t_list *new_list = tcalloc(1, sizeof(t_list));
 

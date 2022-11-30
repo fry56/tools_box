@@ -16,17 +16,18 @@
         struct list_node *prev;
     } t_list_node;
 
-    typedef struct map {
+    typedef struct list {
         t_list_node *head;
         t_list_node *tail;
         tsize_t length;
     } t_list;
 
-    #define list_foreach(map, node) \
-            for (t_list_node *node = map->head; node; node = node->next)
+    #define list_foreach(list, node) \
+            for (t_list_node *node = list->head; node; node = node->next)
 
-    t_list *tmap_new(void);
+    t_list *tlist_new(void);
     t_list_node *tlist_get(t_list *list, tsize_t index);
-    t_list_node *tlist_add(t_list *list, char *key, void *value);
+    t_list_node *tlist_add(t_list *list, void *value);
     bool tlist_remove(t_list *list, t_list_node *node);
+    void *tlist_pop(t_list *list);
 #endif //t_list

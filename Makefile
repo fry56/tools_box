@@ -63,7 +63,8 @@ LIB_SRC = \
 	src/list/list_add.c \
 	src/list/list_get.c \
 	src/list/list_new.c \
-	src/list/list_remove.c
+	src/list/list_remove.c \
+	src/list/list_pop.c
 
 
 LIB = tools_box.a

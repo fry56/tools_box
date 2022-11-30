@@ -27,7 +27,7 @@ void list_add_node(t_list *list, t_list_node *node)
     list->tail = node;
 }
 
-t_list_node *tmap_add(t_list *list, void *value)
+t_list_node *tlist_add(t_list *list, void *value)
 {
     t_list_node *node;
 

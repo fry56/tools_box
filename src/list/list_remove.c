@@ -20,7 +20,7 @@ bool tlist_remove(t_list *list, t_list_node *node)
     if (node->prev)
         node->prev->next = node->next;
     if (node->next)
-        node->next->next = node->prev;
+        node->next->prev = node->prev;
     node->prev = NULL;
     node->next = NULL;
     list->length--;

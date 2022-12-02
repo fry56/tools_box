@@ -36,6 +36,8 @@ t_list_node *tlist_add(t_list *list, void *value)
     if ((node = tcalloc(1, sizeof(t_list_node))) == NULL)
         return NULL;
     node->value = value;
+    node->next = NULL;
+    node->prev = NULL;
     list_add_node(list, node);
     return node;
 }

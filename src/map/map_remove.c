@@ -22,7 +22,7 @@ bool tmap_remove(t_map *map, char *key)
     if (node->prev)
         node->prev->next = node->next;
     if (node->next)
-        node->next->next = node->prev;
+        node->next->prev = node->prev;
     node->prev = NULL;
     node->next = NULL;
     map->length--;

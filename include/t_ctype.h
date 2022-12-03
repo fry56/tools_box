@@ -14,6 +14,7 @@
     typedef unsigned short uint16_t;
     typedef signed int int32_t;
     typedef unsigned int uint32_t;
+    typedef signed long long int int128_t;
 
     #ifndef _INT64_T
         #define _INT64_T

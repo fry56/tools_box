@@ -24,4 +24,6 @@
     char **tstr_to_word_array(char const *str);
     int str_get_nbr(char const *str);
     bool tstr_contain_only(char *str, char *char_list);
+    char *tstr_concat(char *str_a, char *str_b);
+    char *tstr_number(int number);
 #endif //TOOLS_BOX_TSTRING_H

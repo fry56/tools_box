@@ -51,6 +51,8 @@ SRC = \
 	src/string/str_rev.c \
 	src/string/str_str.c \
 	src/string/str_to_word_array.c \
+	src/string/str_concat.c \
+	src/string/str_number.c \
 	\
 	src/write/write.c \
 	\

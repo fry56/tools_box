@@ -22,5 +22,6 @@ char *tstr_concat(char *str_a, char *str_b)
         else
             new_str[i] = str_b[i - len_a];
     }
+    new_str[len_a + len_b + 1] = '\0';
     return new_str;
 }

@@ -14,6 +14,8 @@ int int_power(int nb, int p)
 
     if (nb < 0)
         return 0;
+    if (p == 0)
+        return 1;
     if (p > 1)
         return (value * int_power(value * 10, p - 1)) / 10;
     if (value > INT_MAX || value < INT_MIN)

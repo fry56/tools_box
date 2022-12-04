@@ -7,6 +7,7 @@
 
 #include <t_mem.h>
 #include <t_math.h>
+#include <stdio.h>
 
 char *tstr_number(int number)
 {
@@ -15,9 +16,8 @@ char *tstr_number(int number)
 
     if (new_str == NULL)
         return NULL;
-    for (int i = 0; i < number_len; i++) {
-        new_str[i] = (char)(((int)number % int_power(10, number_len - i)
-            / int_power(10, number_len - (i + 1))) + 48);
-    }
+    for (int i = 0; i < number_len; i++)
+        new_str[i] = (char)(((int)number % int_power(10, number_len - i) / int_power(10, (number_len - 1) - i)) + 48);
+    new_str[number_len + 1] = '\0';
     return new_str;
 }

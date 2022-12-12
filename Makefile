@@ -14,6 +14,7 @@ SRC = \
     src/math/int_square.c \
     src/math/double_abs.c \
     src/math/double_modulo.c \
+    src/math/int_to_base.c \
     \
     src/mem/calloc.c \
     src/mem/memcpy.c \
@@ -53,6 +54,7 @@ SRC = \
 	src/string/str_to_word_array.c \
 	src/string/str_concat.c \
 	src/string/str_number.c \
+	src/string/str_to_number.c \
 	\
 	src/write/write.c \
 	\
@@ -66,7 +68,10 @@ SRC = \
 	src/list/list_get.c \
 	src/list/list_new.c \
 	src/list/list_remove.c \
-	src/list/list_pop.c
+	src/list/list_push.c \
+	src/list/list_pop.c \
+	src/list/list_clear.c \
+	src/list/list_print.c
 
 OBJ = $(SRC:.c=.o)
 

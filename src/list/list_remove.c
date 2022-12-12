@@ -9,8 +9,6 @@
 
 bool tlist_remove(t_list *list, t_list_node *node)
 {
-    if (node == NULL)
-        return false;
     if (node->host != list)
         return false;
     if (node == list->head)

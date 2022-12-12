@@ -26,4 +26,5 @@
     bool tstr_contain_only(char *str, char *char_list);
     char *tstr_concat(char *str_a, char *str_b);
     char *tstr_number(int number);
+    int tstr_to_number(char *number);
 #endif //TOOLS_BOX_TSTRING_H

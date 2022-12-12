@@ -10,7 +10,8 @@
 int int_len(int nbr)
 {
     int length = 0;
-
+    if (nbr == 0)
+        return 1;
     nbr = abs(nbr);
     while (nbr > 0) {
         length++;

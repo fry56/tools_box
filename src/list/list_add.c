@@ -9,6 +9,7 @@
 #include <t_list.h>
 #include <t_mem.h>
 #include <t_string.h>
+#include <t_mem.h>
 
 void list_add_node(t_list *list, t_list_node *node)
 {
@@ -27,6 +28,23 @@ void list_add_node(t_list *list, t_list_node *node)
     list->tail = node;
 }
 
+void list_add_node_before(t_list *list, t_list_node *after, t_list_node *node)
+{
+    if (list == NULL || node == NULL)
+        return;
+    node->host = list;
+    list->length++;
+    if (after == NULL) {
+        node->prev = NULL;
+        node->next = list->head;
+        list->head = node;
+        return;
+    }
+    after->prev->next = node;
+    after->prev = node;
+    node->next = after;
+}
+
 t_list_node *tlist_add(t_list *list, void *value)
 {
     t_list_node *node;
@@ -39,5 +57,41 @@ t_list_node *tlist_add(t_list *list, void *value)
     node->next = NULL;
     node->prev = NULL;
     list_add_node(list, node);
+    return node;
+}
+
+t_list_node *tlist_add_before(t_list *list, t_list_node *after, void *value)
+{
+    t_list_node *node;
+
+    if (list == NULL)
+        return NULL;
+    if ((node = tcalloc(1, sizeof(t_list_node))) == NULL)
+        return NULL;
+    node->value = value;
+    list_add_node_before(list, after, node);
+    return node;
+}
+
+t_list_node *tlist_add_top(t_list *list, void *value)
+{
+    t_list_node *node;
+    t_list_node *after;
+
+    if (list == NULL)
+        return NULL;
+    if ((node = tcalloc(1, sizeof(t_list_node))) == NULL)
+        return NULL;
+    if (list->head == NULL)
+        return tlist_add(list, value);
+    after = list->head;
+    list->head->prev = node;
+    list->head = node;
+    node->host = list;
+    node->value = value;
+    node->next = after;
+    node->prev = NULL;
+    after->prev = node;
+    list->length++;
     return node;
 }

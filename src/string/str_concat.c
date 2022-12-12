@@ -18,10 +18,11 @@ char *tstr_concat(char *str_a, char *str_b)
     if (new_str == NULL)
         return NULL;
     for (int i = 0; i < (len_a + len_b); ++i) {
-        if (i < len_a)
+        if (i < len_a) {
             new_str[i] = str_a[i];
-        else
+        } else {
             new_str[i] = str_b[i - len_a];
+        }
     }
     new_str[len_a + len_b] = '\0';
     return new_str;

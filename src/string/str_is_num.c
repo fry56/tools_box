@@ -15,7 +15,7 @@ int tstr_is_num(char const *str)
     if (length == 0)
         return 1;
     while (str[count] != '\0') {
-        if (!(str[count] > '0' && str[count] < '9'))
+        if (!(str[count] >= '0' && str[count] <= '9'))
             return 0;
         count++;
     }

@@ -21,3 +21,14 @@ t_list_node *tlist_get(t_list *list, tsize_t index)
     }
     return NULL;
 }
+
+t_list_node *tlist_find(t_list *list, void *value)
+{
+    if (list == NULL || value == NULL)
+        return NULL;
+    list_foreach(list, node) {
+        if (node->value == value)
+            return node;
+    }
+    return NULL;
+}

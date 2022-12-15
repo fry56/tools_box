@@ -17,4 +17,16 @@
     long double double_abs(long double nb);
     char *int_to_base(int number, int base, int max_digits);
 
+    #ifndef min
+        #define min(a, b) ((a < b) ? a : b)
+    #endif
+
+    #ifndef max
+        #define max(a, b) (a > b) ? a : b)
+    #endif
+
+    #ifndef abs
+        #define abs(val) ((val < 0) ? -val : val)
+    #endif
+
 #endif //TOOLS_BOX_TMATH_H

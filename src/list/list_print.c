@@ -6,25 +6,26 @@
 */
 
 #include <t_list.h>
+#include <t_printf.h>
 
 void tlist_print(t_list *list)
 {
     int i = 0;
-    printf("\n\n\n");
-    printf("--- List --- \n");
-    printf("Pointer : %p \n", list);
-    printf("Head : %p \n", list->head);
-    printf("Tail : %p \n", list->tail);
-    printf("Length : %lu \n", list->length);
-    printf("--- Node --- \n");
+    tprintf("\n\n\n");
+    tprintf("--- List --- \n");
+    tprintf("Pointer : %p \n", list);
+    tprintf("Head : %p \n", list->head);
+    tprintf("Tail : %p \n", list->tail);
+    tprintf("Length : %lu \n", list->length);
+    tprintf("--- Node --- \n");
     list_foreach(list, node) {
-        printf("Node [%d] \n", i);
-        printf("Pointer : %p \n", node);
-        printf("Host : %p \n", node->host);
-        printf("next : %p \n", node->next);
-        printf("prev : %p \n", node->prev);
-        printf("value : %p \n", node->value);
-        printf("value(string) : %s \n", node->value);
+        tprintf("Node [%d] \n", i);
+        tprintf("Pointer : %p \n", node);
+        tprintf("Host : %p \n", node->host);
+        tprintf("next : %p \n", node->next);
+        tprintf("prev : %p \n", node->prev);
+        tprintf("value : %p \n", node->value);
+        tprintf("value(string) : %s \n", node->value);
         i++;
     }
 }

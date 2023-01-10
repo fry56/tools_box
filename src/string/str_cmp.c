@@ -5,33 +5,20 @@
 ** desc
 */
 
-#include <t_string.h>
-
-static int str_cmpn(char const *str, int n)
+int tstr_cmp(unsigned char const *s1,  unsigned char const *s2)
 {
-    int count = 0;
-    int value = 0;
-
-    while (str[count] != '\0' && count <= n) {
-        value += str[count];
-        count++;
+    for (; *s1 || *s2 ; s1++, s2++) {
+        if (*s1 != *s2)
+            return *s1 - *s2;
     }
-
-    return value;
-}
-
-int tstr_cmp(char const *s1, char const *s2)
-{
-    int value_a = str_cmpn(s1, tstr_len(s1));
-    int value_b = str_cmpn(s2, tstr_len(s2));
-
-    return value_a - value_b;
+    return 0;
 }
 
 int tstr_ncmp(char const *s1, char const *s2, int n)
 {
-    int value_a = str_cmpn(s1, n);
-    int value_b = str_cmpn(s2, n);
-
-    return value_a - value_b;
+    for (int i = 0; *s1 || *s2 || i > n; s1++, s2++, i++) {
+        if (*s1 != *s2)
+            return *s1 - *s2;
+    }
+    return 0;
 }

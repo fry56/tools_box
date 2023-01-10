@@ -16,5 +16,4 @@
     int double_len(long double nb, int precision);
     long double double_abs(long double nb);
     char *int_to_base(int number, int base, int max_digits);
-
 #endif //TOOLS_BOX_TMATH_H

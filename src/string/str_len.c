@@ -5,9 +5,9 @@
 ** desc
 */
 
-int tstr_len(char const *buffer)
+extern inline int tstr_len(unsigned char *buffer)
 {
-    int count = 0;
+    register int count = 0;
 
     while (buffer[count] != '\0')
         count++;

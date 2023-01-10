@@ -71,7 +71,14 @@ SRC = \
 	src/list/list_push.c \
 	src/list/list_pop.c \
 	src/list/list_clear.c \
-	src/list/list_print.c
+	src/list/list_print.c \
+	\
+	src/hashmap/hashmap_new.c \
+	src/hashmap/hashmap_get_hash.c \
+	src/hashmap/hashmap_add.c \
+	src/hashmap/hashmap_get.c \
+	src/hashmap/hashmap_remove.c \
+	src/hashmap/hashmap_clear.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -11,8 +11,8 @@
 
 char *tstr_concat(char *str_a, char *str_b)
 {
-    int len_a = tstr_len(str_a);
-    int len_b = tstr_len(str_b);
+    int len_a = tstr_len((unsigned char *)str_a);
+    int len_b = tstr_len((unsigned char *)str_b);
     char *new_str = malloc(len_a + len_b + 1);
 
     if (new_str == NULL)

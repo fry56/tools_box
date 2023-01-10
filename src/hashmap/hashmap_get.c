@@ -16,7 +16,7 @@ t_hashmap_node *thashmap_get(t_hashmap *hashmap, const char *key)
         return NULL;
     if (tstr_cmp(key, hashmap->map[hash]->key) == 0)
         return hashmap->map[hash];
-    list_foreach(hashmap->map[hash]->childs_node, node)
+    list_foreach(hashmap->map[hash]->childs_node, node) {
         if (tstr_cmp(key, ((t_hashmap_node *)node->value)->key) == 0)
             return node->value;
     }

@@ -7,6 +7,7 @@
 #ifndef TOOLS_BOX_TSTRING_H
     #define TOOLS_BOX_TSTRING_H
     #include "t_ctype.h"
+    #include <t_list.h>
     char *tstr_case_lower(char *str);
     char *tstr_case_upper(char *str);
     int tstr_cmp(char const *s1, char const *s2);
@@ -27,4 +28,5 @@
     char *tstr_concat(char *str_a, char *str_b);
     char *tstr_number(int number);
     int tstr_to_number(char *number);
+    t_list *tstr_split(char *buf, char *split);
 #endif //TOOLS_BOX_TSTRING_H

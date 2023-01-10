@@ -7,6 +7,7 @@
 
 #include <t_write.h>
 #include <t_math.h>
+#include <stdlib.h>
 
 int print_nbr_data(int const *number, int i, int count)
 {
@@ -27,10 +28,10 @@ int print_nbr(long long nb)
     if (nb == 0)
         twrite(1, "0");
     for (; nb / 10 != 0; i++) {
-        number[i] = abs(nb % 10);
+        number[i] = abs((int)nb % 10);
         nb = nb / 10;
     }
-    number[i] = abs(nb % 10);
+    number[i] = abs((int)nb % 10);
     count = i + 1;
     if (nb < 0) {
         twrite(1, "-");

@@ -9,7 +9,7 @@
 
 int tstr_is_printable(char const *str)
 {
-    int length = tstr_len(str);
+    int length = tstr_len((unsigned char *)str);
     int count = 0;
 
     if (length == 0)

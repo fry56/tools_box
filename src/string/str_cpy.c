@@ -9,8 +9,8 @@
 
 char *tstr_cpy(char *dest, char const *src)
 {
-    int i = 0;
-    int length_src = tstr_len(src);
+    int i;
+    int length_src = tstr_len((unsigned char *)src);
 
     for (i = 0; i <= length_src; i++) {
         dest[i] = src[i];

@@ -8,7 +8,7 @@
 
 char *tstr_rev(char *str)
 {
-    int size = tstr_len(str) - 1;
+    int size = tstr_len((unsigned char *)str) - 1;
     char temp;
 
     for (int i = 0; i <= size / 2; i++) {

@@ -6,6 +6,7 @@
 */
 
 #include <t_math.h>
+#include <stdlib.h>
 
 int int_len(int nbr)
 {

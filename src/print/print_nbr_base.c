@@ -19,16 +19,16 @@ int print_base(int const *nbr_base, int i, char *base)
 
 int print_nbr_base(unsigned int nbr, char *base)
 {
-    int len = tstr_len(base);
+    int len = tstr_len((unsigned char *)base);
     int nbr_base[32];
     int i = 0;
     int count;
 
     for (; nbr / len != 0; i++) {
-        nbr_base[i] = nbr % len;
+        nbr_base[i] = (int)nbr % len;
         nbr = nbr / len;
     }
-    nbr_base[i] = nbr % len;
+    nbr_base[i] = (int)nbr % len;
     count = i + 1;
     if (nbr_base[i] == 0)
         return (0);

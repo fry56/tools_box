@@ -29,4 +29,5 @@
     char *tstr_number(int number);
     int tstr_to_number(char *number);
     t_list *tstr_split(char *buf, char *split);
+    unsigned char *tstr_concat_char(unsigned char *str_a, unsigned char char_b);
 #endif //TOOLS_BOX_TSTRING_H

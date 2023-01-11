@@ -55,6 +55,8 @@ SRC = \
 	src/string/str_concat.c \
 	src/string/str_number.c \
 	src/string/str_to_number.c \
+	src/string/str_split.c \
+	src/string/str_concat_char.c \
 	\
 	src/write/write.c \
 	\
@@ -79,8 +81,7 @@ SRC = \
 	src/hashmap/hashmap_get.c \
 	src/hashmap/hashmap_remove.c \
 	src/hashmap/hashmap_clear.c \
-	src/string/str_split.c \
-	src/string/str_concat_char.c
+	src/hashmap/hashmap_to_list.c
 
 OBJ = $(SRC:.c=.o)
 

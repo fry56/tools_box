@@ -32,4 +32,5 @@
     t_hashmap_node *thashmap_get(t_hashmap *hashmap, const char *key);
     u32 hashmap_get_hash(u32 size, const char *key);
     void thashmap_clear(t_hashmap *hashmap);
+    t_list *thashmap_to_list(t_hashmap *hashmap);
 #endif //t_hashmap

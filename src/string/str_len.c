@@ -5,7 +5,7 @@
 ** desc
 */
 
-extern inline int tstr_len(unsigned char *buffer)
+int tstr_len(unsigned char *buffer)
 {
     register int count = 0;
 

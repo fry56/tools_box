@@ -12,9 +12,10 @@ char *tstr_cpy(char *dest, char const *src)
     int i;
     int length_src = tstr_len((unsigned char *)src);
 
-    for (i = 0; i <= length_src; i++) {
+    if (dest == NULL)
+        dest = malloc(length_src + 2);
+    for (i = 0; i <= length_src; i++)
         dest[i] = src[i];
-    }
     dest[i] = '\0';
     return dest;
 }

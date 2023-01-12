@@ -12,7 +12,7 @@
 
 t_hashmap *thashmap_new(u32 size)
 {
-    t_hashmap *new_hashmap = malloc(sizeof(t_hashmap));
+    t_hashmap *new_hashmap = tcalloc(1, sizeof(t_hashmap));
 
     if (new_hashmap == NULL)
         return NULL;

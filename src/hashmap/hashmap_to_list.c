@@ -9,7 +9,8 @@
 #include <t_list.h>
 #include <t_hashmap.h>
 
-void add_child(t_hashmap_node *hashmap_node, t_list *new_list) {
+void add_child(t_hashmap_node *hashmap_node, t_list *new_list)
+{
     if (hashmap_node->childs_node) {
         list_foreach(hashmap_node->childs_node, node)
             tlist_add(new_list, ((t_hashmap_node *)node->value)->value);

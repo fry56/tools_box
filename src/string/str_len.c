@@ -5,7 +5,7 @@
 ** desc
 */
 
-int tstr_len(unsigned char *buffer)
+int tstr_len(char *buffer)
 {
     register int count = 0;
 

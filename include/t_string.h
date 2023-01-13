@@ -19,7 +19,7 @@
     int tstr_is_num(char const *str);
     int tstr_is_printable(char const *str);
     int tstr_is_upper(char const *str);
-    int tstr_len(unsigned char *buffer);
+    int tstr_len(char *buffer);
     char *tstr_rev(char *str);
     char *tstr_str(char *str, char const *to_find);
     char **tstr_to_word_array(char const *str);

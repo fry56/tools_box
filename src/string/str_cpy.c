@@ -10,7 +10,7 @@
 char *tstr_cpy(char *dest, char const *src)
 {
     int i;
-    int length_src = tstr_len((unsigned char *)src);
+    int length_src = tstr_len(src);
 
     if (dest == NULL)
         dest = malloc(length_src + 2);

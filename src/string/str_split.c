@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <t_mem.h>
 #include <t_string.h>
+#include <t_hashmap.h>
 
 bool is_char_split(char c, char *split)
 {
@@ -26,7 +27,7 @@ t_list *tstr_split(char *buf, char *split)
     t_list *new_list = tlist_new();
     int str_size = 0;
     char *temp;
-    int buf_len = tstr_len((unsigned char *)buf);
+    int buf_len = tstr_len(buf);
     for (int i = 0; buf_len >= i; ++i) {
         if (is_char_split(buf[i], split) || buf_len == i) {
             temp[str_size] = '\0';

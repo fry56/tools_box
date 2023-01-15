@@ -34,13 +34,10 @@ void list_add_node_before(t_list *list, t_list_node *after, t_list_node *node)
         return;
     node->host = list;
     list->length++;
-    if (after == NULL) {
-        node->prev = NULL;
-        node->next = list->head;
+    if (after->prev == NULL)
         list->head = node;
-        return;
-    }
-    after->prev->next = node;
+    else
+        after->prev->next = node;
     after->prev = node;
     node->next = after;
 }
@@ -69,7 +66,12 @@ t_list_node *tlist_add_before(t_list *list, t_list_node *after, void *value)
     if ((node = tcalloc(1, sizeof(t_list_node))) == NULL)
         return NULL;
     node->value = value;
-    list_add_node_before(list, after, node);
+    node->next = NULL;
+    node->prev = NULL;
+    if (after == NULL)
+        list_add_node(list, node);
+    else
+        list_add_node_before(list, after, node);
     return node;
 }
 

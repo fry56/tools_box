@@ -44,3 +44,50 @@ t_list *tstr_split(char *buf, char *split)
     }
     return new_list;
 }
+
+bool is_string_split(int *i, const char *buf
+        , const int split_length, const char **split)
+{
+    int index_split = 0;
+    int index_buf = *i;
+
+    for (int j = 0; j < split_length ;) {
+        if (split[j][index_split] == '\0') {
+            *i += (index_buf - *i) - 1;
+            return true;
+        }
+        if (buf[index_buf] == split[j][index_split]) {
+            index_split++;
+            index_buf++;
+            continue;
+        }
+        j++;
+        index_split = 0;
+        index_buf = *i;
+    }
+    return false;
+}
+
+t_list *tstr_split_list(const char *buf, const int split_length
+        , const char **split)
+{
+    t_list *new_list;
+    int buf_lenght = tstr_len(buf);
+    char *temp_buf = malloc(buf_lenght + 1);
+    int temp_buf_index = 0;
+
+    if ((new_list = tlist_new()) == NULL)
+        return NULL;
+    for (int i = 0; i <= buf_lenght; ++i) {
+        if (is_string_split(&i, buf, split_length, split)
+            || i == buf_lenght) {
+            temp_buf[temp_buf_index++] = '\0';
+            tlist_add(new_list, temp_buf);
+            temp_buf = malloc(buf_lenght + 1);
+            temp_buf_index = 0;
+            continue;
+        }
+        temp_buf[temp_buf_index++] = buf[i];
+    }
+    return new_list;
+}

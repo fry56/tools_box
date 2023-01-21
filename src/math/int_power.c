@@ -10,15 +10,11 @@
 
 int int_power(int nb, int p)
 {
-    int64_t value = nb;
-
-    if (nb < 0)
-        return 0;
+    int new_nb = nb;
     if (p == 0)
         return 1;
-    if (p > 1)
-        return (value * int_power(value * 10, p - 1)) / 10;
-    if (value > INT_MAX || value < INT_MIN)
-        return 0;
-    return nb;
+    for (int i = 1; i < p; ++i) {
+        new_nb *= nb;
+    }
+    return new_nb;
 }

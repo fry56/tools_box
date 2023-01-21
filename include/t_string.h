@@ -26,8 +26,11 @@
     int str_get_nbr(char const *str);
     bool tstr_contain_only(char *str, char *char_list);
     char *tstr_concat(char *str_a, char *str_b);
+    char *tstr_n_concat(char *str_a, char *str_b, int len_b);
     char *tstr_number(int number);
     int tstr_to_number(char *number);
     t_list *tstr_split(char *buf, char *split);
     unsigned char *tstr_concat_char(unsigned char *str_a, unsigned char char_b);
+    char *tstr_to_binary(char *str);
+    char *binary_to_str(char *binary);
 #endif //TOOLS_BOX_TSTRING_H

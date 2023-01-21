@@ -57,6 +57,7 @@ SRC = \
 	src/string/str_to_number.c \
 	src/string/str_split.c \
 	src/string/str_concat_char.c \
+	src/string/str_to_binary.c \
 	\
 	src/write/write.c \
 	\
@@ -90,7 +91,7 @@ GCC = gcc
 INCLUDE_FLAGS = \
 	-I include
 
-C_WARNING_FLAGS = -Wextra -Wall
+C_WARNING_FLAGS = -Wextra -Wall -g
 C_FLAGS = $(C_WARNING_FLAGS) $(INCLUDE_FLAGS)
 
 .c.o:
@@ -107,3 +108,6 @@ tools_box.a: $(OBJ)
 clean:
 	@find . \( -name "*.o" -or -name "*.a" \) -delete
 .PHONY : clean
+
+re: clean all
+.PHONY: re

@@ -33,4 +33,5 @@
     u32 hashmap_get_hash(u32 size, const char *key);
     void thashmap_clear(t_hashmap *hashmap);
     t_list *thashmap_to_list(t_hashmap *hashmap);
+    void thashmap_free(t_hashmap *hashmap);
 #endif //t_hashmap

@@ -37,13 +37,13 @@ int print_float_char(int i, int precision, char *number)
 
 int print_float(long double nb, int precision)
 {
-    long double fl_to_int = double_abs(fl_prec(nb, precision)) + 0.5;
+    long double fl_to_int = tdouble_abs(fl_prec(nb, precision)) + 0.5;
     char number[41 + precision];
     int i = 0;
     int count;
 
     for (; i < precision; i++) {
-        number[i] = double_modulo(fl_to_int, 10) + '0';
+        number[i] = tdouble_modulo(fl_to_int, 10) + '0';
         fl_to_int = (fl_to_int - (number[i] - '0')) / 10;
     }
     if (precision > 0) {
@@ -51,7 +51,7 @@ int print_float(long double nb, int precision)
         i++;
     }
     for (; fl_to_int >= 1; i++) {
-        number[i] = double_modulo(fl_to_int, 10) + '0';
+        number[i] = tdouble_modulo(fl_to_int, 10) + '0';
         fl_to_int = (fl_to_int - (number[i] - '0')) / 10;
     }
     count = print_float_char(i, precision, number);

@@ -21,6 +21,7 @@ SRC = \
     src/mem/memmove.c \
     src/mem/memset.c \
     src/mem/realloc.c \
+    src/mem/data_to_binary.c \
     \
     src/print/print_float.c \
 	src/print/print_nbr.c \
@@ -37,7 +38,6 @@ SRC = \
     src/char/char_is_upper.c \
     src/char/char_lower.c \
     \
-    src/string/str_get_nbr.c \
 	src/string/str_case_lower.c \
 	src/string/str_case_upper.c \
 	src/string/str_cmp.c \
@@ -51,9 +51,7 @@ SRC = \
 	src/string/str_contain.c \
 	src/string/str_rev.c \
 	src/string/str_str.c \
-	src/string/str_to_word_array.c \
 	src/string/str_concat.c \
-	src/string/str_number.c \
 	src/string/str_to_number.c \
 	src/string/str_split.c \
 	src/string/str_concat_char.c \
@@ -82,14 +80,15 @@ SRC = \
 	src/hashmap/hashmap_get.c \
 	src/hashmap/hashmap_remove.c \
 	src/hashmap/hashmap_clear.c \
-	src/hashmap/hashmap_to_list.c
+	src/hashmap/hashmap_to_list.c \
+	src/hashmap/hashmap_free.c
 
 OBJ = $(SRC:.c=.o)
 
 GCC = gcc
 
 INCLUDE_FLAGS = \
-	-I include
+	-I includes
 
 C_WARNING_FLAGS = -Wextra -Wall -g
 C_FLAGS = $(C_WARNING_FLAGS) $(INCLUDE_FLAGS)

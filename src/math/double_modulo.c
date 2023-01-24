@@ -5,7 +5,7 @@
 ** Modulo operation, but for double float
 */
 
-double double_modulo(long double nb, double div)
+double tdouble_modulo(long double nb, double div)
 {
     long long constant = 10000000000000;
     long double mult_div = constant * div;
@@ -18,5 +18,5 @@ double double_modulo(long double nb, double div)
             mult_div = mult_div / 10;
     }
     nb = (int) nb;
-    return (nb);
+    return (double)nb;
 }

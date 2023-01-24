@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <t_ctype.h>
 #include <t_list.h>
+#include <t_string.h>
 
 bool insert_node_to_hashmap(t_hashmap *hashmap, t_hashmap_node *new_node)
 {
@@ -32,8 +33,10 @@ bool insert_node_to_hashmap(t_hashmap *hashmap, t_hashmap_node *new_node)
 
 t_hashmap_node *thashmap_add(t_hashmap *hashmap, char *key, void *value)
 {
-    t_hashmap_node *new_node = malloc(sizeof(t_hashmap_node));
-
+    t_hashmap_node *new_node;
+    if (hashmap == NULL || tstr_len(key) != 0 || value != NULL)
+        return NULL;
+    new_node = malloc(sizeof(t_hashmap_node));
     if (new_node == NULL)
         return NULL;
     new_node->host = hashmap;

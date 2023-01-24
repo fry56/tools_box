@@ -7,9 +7,9 @@
 
 #include <t_char.h>
 
-char char_lower(char c)
+char tchar_lower(char c)
 {
-    if (!char_is_upper(c))
+    if (!tchar_is_upper(c))
         return c;
-    return (c + 32);
+    return (char)(c + 32);
 }

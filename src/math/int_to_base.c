@@ -6,15 +6,11 @@
 */
 
 #include <t_math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "t_list.h"
 #include <t_string.h>
-#include "t_ctype.h"
 
-char *int_to_base(int number, int base, int max_digits)
+char *tint_to_base(int number, int base, int max_digits)
 {
-    char *number_str = malloc(1);
+    char *number_str = "";
     int size = 0;
     while (number > 0) {
         number_str = tstr_concat(number_str, tstr_number(number % base));

@@ -7,7 +7,7 @@
 
 #include <t_ctype.h>
 
-bool char_is_upper(char c)
+bool tchar_is_upper(char c)
 {
     if (!(c > 'A' && c < 'Z'))
         return false;

@@ -8,7 +8,7 @@
 #include <t_ctype.h>
 #include <limits.h>
 
-int int_power(int nb, int p)
+int tint_power(int nb, int p)
 {
     int new_nb = nb;
     if (p == 0)

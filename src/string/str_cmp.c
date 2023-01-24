@@ -5,7 +5,7 @@
 ** desc
 */
 
-int tstr_cmp(unsigned char const *s1,  unsigned char const *s2)
+int tstr_cmp(char const *s1, char const *s2)
 {
     for (; *s1 || *s2 ; s1++, s2++) {
         if (*s1 != *s2)

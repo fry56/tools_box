@@ -5,11 +5,10 @@
 ** desc
 */
 
-
 #include <t_list.h>
 #include <t_hashmap.h>
 
-void add_child(t_hashmap_node *hashmap_node, t_list *new_list)
+static void add_child(t_hashmap_node *hashmap_node, t_list *new_list)
 {
     if (hashmap_node->childs_node) {
         list_foreach(hashmap_node->childs_node, node)
@@ -19,8 +18,10 @@ void add_child(t_hashmap_node *hashmap_node, t_list *new_list)
 
 t_list *thashmap_to_list(t_hashmap *hashmap)
 {
-    t_list *new_list = tlist_new();
+    t_list *new_list;
 
+    if (hashmap == NULL || (new_list = tlist_new()) == NULL)
+        return NULL;
     for (u32 i = 0; i < hashmap->size; ++i) {
         if (hashmap->map[i]) {
             tlist_add(new_list, hashmap->map[i]->value);

@@ -14,7 +14,7 @@
 char *tstr_to_binary(char *str)
 {
     int str_length = tstr_len(str);
-    char *binary = malloc(str_length * (sizeof(char) * 8) + 1);
+    char *binary = tcalloc(1, str_length * (sizeof(char) * 8) + 1);
     int index = 0;
 
     for (; *str; str++) {
@@ -26,7 +26,7 @@ char *tstr_to_binary(char *str)
     return binary;
 }
 
-char *binary_to_str(char *binary)
+char *tbinary_to_str(char *binary)
 {
     int binary_len = tstr_len(binary);
     char *new_str;
@@ -38,7 +38,7 @@ char *binary_to_str(char *binary)
         return NULL;
     for (int i = 7; *binary; binary++, i--) {
         if (*binary == '1')
-            ascii += int_power(2, i);
+            ascii += tint_power(2, i);
         if (i == 0) {
             new_str[index++] = (char)ascii;
             i = 8;

@@ -9,7 +9,7 @@
 
 int tstr_is_upper(char const *str)
 {
-    int length = tstr_len((unsigned char *)str);
+    int length = tstr_len(str);
     int count = 0;
 
     if (length == 0)

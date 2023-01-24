@@ -7,12 +7,14 @@
 
 #include <t_hashmap.h>
 #include <stdlib.h>
+#include <t_string.h>
 
 void remove_node_with_child(t_hashmap *hashmap, t_hashmap_node *node
     , const char *key)
 {
     t_list_node *child_node = node->childs_node->tail;
-
+    if (hashmap == NULL || node == NULL || tstr_len(key) == 0)
+        return;
     hashmap->child_elements--;
     ((t_hashmap_node *)child_node->value)->childs_node = node->childs_node;
     ((t_hashmap_node *)child_node->value)->parent_node = NULL;

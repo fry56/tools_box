@@ -8,9 +8,10 @@
 #include <t_math.h>
 #include <stdlib.h>
 
-int int_len(int nbr)
+int tint_len(int nbr)
 {
     int length = 0;
+
     if (nbr == 0)
         return 1;
     nbr = abs(nbr);

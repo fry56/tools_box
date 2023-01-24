@@ -11,7 +11,7 @@
 #include <t_string.h>
 #include <t_hashmap.h>
 
-bool is_char_split(char c, char *split)
+static bool is_char_split(char c, char *split)
 {
     if (c == '\0')
         return true;
@@ -45,7 +45,7 @@ t_list *tstr_split(char *buf, char *split)
     return new_list;
 }
 
-bool is_string_split(int *i, const char *buf
+static bool is_string_split(int *i, const char *buf
         , const int split_length, const char **split)
 {
     int index_split = 0;

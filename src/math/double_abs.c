@@ -5,7 +5,7 @@
 ** Returns the absolute value of a long double float
 */
 
-long double double_abs(long double nb)
+long double tdouble_abs(long double nb)
 {
     return nb < 0 ? -nb : nb;
 }

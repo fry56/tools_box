@@ -11,5 +11,5 @@
 
 tsize_t twrite(int fb, char *buffer)
 {
-    return (write(fb, buffer, tstr_len((unsigned char *)buffer)));
+    return (write(fb, buffer, tstr_len(buffer)));
 }

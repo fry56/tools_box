@@ -8,10 +8,10 @@
 #include <t_string.h>
 #include <stdlib.h>
 
-unsigned char *tstr_concat_char(unsigned char *str_a, unsigned char char_b)
+char *tstr_concat_char(char *str_a, char char_b)
 {
     int len_a = tstr_len(str_a);
-    unsigned char *new_str = malloc(len_a + 2);
+    char *new_str = malloc(len_a + 2);
 
     if (new_str == NULL)
         return NULL;

@@ -10,6 +10,8 @@
 
 void thashmap_clear(t_hashmap *hashmap)
 {
+    if (hashmap == NULL)
+        return;
     for (u32 i = 0; i < hashmap->size; ++i) {
         if (hashmap->map[i]) {
             tlist_free(hashmap->map[i]->childs_node);

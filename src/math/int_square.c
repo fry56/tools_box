@@ -17,7 +17,7 @@ static int square_root(int nb, int temp, int n)
     return n + 1;
 }
 
-int int_square(int nb)
+int tint_square(int nb)
 {
     if (nb <= 0)
         return 0;

@@ -5,7 +5,7 @@
 ** desc
 */
 
-int int_is_prime(int nb)
+int tint_is_prime(int nb)
 {
     int i = 3;
 

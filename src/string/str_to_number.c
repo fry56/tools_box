@@ -10,7 +10,7 @@
 
 int tstr_to_number(char *number)
 {
-    int length = tstr_len((unsigned char *)number);
+    int length = tstr_len(number);
     int new_number = 0;
 
     if (!tstr_contain_only(number, "0123456789\n"))

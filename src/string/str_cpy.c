@@ -6,6 +6,7 @@
 */
 
 #include <t_string.h>
+#include <stdlib.h>
 
 char *tstr_cpy(char *dest, char const *src)
 {
@@ -24,6 +25,8 @@ char *tstr_ncpy(char *dest, char const *src, int n)
 {
     int i;
 
+    if (dest == NULL)
+        dest = malloc(n + 2);
     for (i = 0; i <= n; i++) {
         dest[i] = src[i];
     }

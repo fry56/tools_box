@@ -12,7 +12,7 @@ t_hashmap_node *thashmap_get(t_hashmap *hashmap, const char *key)
 {
     uint32_t hash;
 
-    if (hashmap == NULL || tstr_len(key) != 0)
+    if (hashmap == NULL || tstr_len(key) == 0)
         return NULL;
     hash = hashmap_get_hash(hashmap->size, key);
     if (hashmap->map[hash] == NULL)

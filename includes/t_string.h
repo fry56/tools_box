@@ -28,6 +28,8 @@
     char *tstr_number(int number);
     int tstr_to_number(char *number);
     t_list *tstr_split(char *buf, char *split);
+    t_list *tstr_split_list(const char *buf, const int split_length
+            , const char **split);
     char *tstr_concat_char(char *str_a, char char_b);
     char *tstr_to_binary(char *str);
     char *tbinary_to_str(char *binary);

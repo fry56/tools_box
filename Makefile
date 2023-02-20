@@ -81,7 +81,8 @@ SRC = \
 	src/hashmap/hashmap_remove.c \
 	src/hashmap/hashmap_clear.c \
 	src/hashmap/hashmap_to_list.c \
-	src/hashmap/hashmap_free.c
+	src/hashmap/hashmap_free.c \
+	src/hashmap/hashmap_foreach.c
 
 OBJ = $(SRC:.c=.o)
 

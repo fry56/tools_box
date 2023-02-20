@@ -34,4 +34,6 @@
     void thashmap_clear(t_hashmap *hashmap);
     t_list *thashmap_to_list(t_hashmap *hashmap);
     void thashmap_free(t_hashmap *hashmap);
+    void thashmap_foreach(t_hashmap *hashmap
+        , void (function)(char *key, void *value));
 #endif //t_hashmap

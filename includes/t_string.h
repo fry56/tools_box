@@ -33,4 +33,7 @@
     char *tstr_concat_char(char *str_a, char char_b);
     char *tstr_to_binary(char *str);
     char *tbinary_to_str(char *binary);
+    char *tstr_compos(char *format, ...);
+    int tstr_index_of(char *buf, char *value);
+    char *tstr_match(char *buf, char *match);
 #endif //TOOLS_BOX_TSTRING_H

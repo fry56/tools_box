@@ -56,6 +56,9 @@ SRC = \
 	src/string/str_split.c \
 	src/string/str_concat_char.c \
 	src/string/str_to_binary.c \
+	src/string/str_compos.c \
+	src/string/str_match.c \
+	src/string/str_index_of.c \
 	\
 	src/write/write.c \
 	\
@@ -82,7 +85,18 @@ SRC = \
 	src/hashmap/hashmap_clear.c \
 	src/hashmap/hashmap_to_list.c \
 	src/hashmap/hashmap_free.c \
-	src/hashmap/hashmap_foreach.c
+	src/hashmap/hashmap_foreach.c \
+	\
+	src/path/path_is_valide.c \
+	src/path/path_open_file.c \
+	src/path/path_close_file.c \
+	src/path/path_open_dir.c \
+	src/path/path_close_dir.c \
+	src/path/path_file_content_to_array.c \
+	\
+	src/xml/xml_get_attribute.c \
+	src/xml/xml_get_balise.c \
+	src/xml/xml_get_content.c
 
 OBJ = $(SRC:.c=.o)
 

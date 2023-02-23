@@ -29,6 +29,8 @@ void tlist_free(t_list *list)
 {
     if (list == NULL)
         return;
+    list_foreach(list, node)
+        free(node->value);
     tlist_clear(list);
     free(list);
 }

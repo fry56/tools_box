@@ -59,6 +59,7 @@ SRC = \
 	src/string/str_compos.c \
 	src/string/str_match.c \
 	src/string/str_index_of.c \
+	src/string/str_number.c \
 	\
 	src/write/write.c \
 	\

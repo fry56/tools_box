@@ -16,6 +16,6 @@ void int_flag(va_list args)
 
 char *compos_int(va_list args)
 {
-    return "";//tstr_number(va_arg(args, int));
+    return tstr_number(va_arg(args, int));
 }
 

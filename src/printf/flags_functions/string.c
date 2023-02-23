@@ -14,3 +14,8 @@ void string_flag(va_list args)
     char *arg_string = va_arg(args, char*);
     twrite(1, arg_string);
 }
+
+char *compos_string(va_list args)
+{
+    return va_arg(args, char *);
+}

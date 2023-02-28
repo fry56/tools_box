@@ -19,7 +19,7 @@ char *tstr_number(int number)
         return NULL;
     for (int i = 0; i < number_len; i++)
         new_str[i] = (char)(((int)number % tint_power(10, number_len - i)
-                             / tint_power(10, (number_len - 1) - i)) + 48);
+            / tint_power(10, (number_len - 1) - i)) + 48);
     new_str[number_len] = '\0';
     return new_str;
 }

@@ -18,4 +18,3 @@ char *compos_int(va_list args)
 {
     return tstr_number(va_arg(args, int));
 }
-

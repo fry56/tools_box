@@ -13,6 +13,6 @@ t_list *tlist_new(void)
 {
     t_list *new_list = tcalloc(1, sizeof(t_list));
 
-    nassert(new_list == NULL && "new_list == NULL");
+    tassert(new_list == NULL && "new_list == NULL");
     return new_list;
 }

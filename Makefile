@@ -97,7 +97,9 @@ SRC = \
 	\
 	src/xml/xml_get_attribute.c \
 	src/xml/xml_get_balise.c \
-	src/xml/xml_get_content.c
+	src/xml/xml_get_content.c \
+	\
+	src/assert/assert.c
 
 OBJ = $(SRC:.c=.o)
 

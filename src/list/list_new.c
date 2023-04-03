@@ -6,14 +6,13 @@
 */
 
 #include <t_list.h>
-#include <stdlib.h>
 #include <t_mem.h>
+#include <t_assert.h>
 
 t_list *tlist_new(void)
 {
     t_list *new_list = tcalloc(1, sizeof(t_list));
-    new_list->head = NULL;
-    new_list->tail = NULL;
-    new_list->length = 0;
+
+    nassert(new_list == NULL && "new_list == NULL");
     return new_list;
 }

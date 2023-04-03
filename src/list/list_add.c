@@ -8,8 +8,7 @@
 #include <t_ctype.h>
 #include <t_list.h>
 #include <t_mem.h>
-#include <t_string.h>
-#include <t_mem.h>
+#include <t_assert.h>
 
 void list_add_node(t_list *list, t_list_node *node)
 {
@@ -48,8 +47,7 @@ t_list_node *tlist_add(t_list *list, void *value)
 
     if (list == NULL)
         return NULL;
-    if ((node = tcalloc(1, sizeof(t_list_node))) == NULL)
-        return NULL;
+    t_assert((node = tcalloc(1, sizeof(t_list_node))) == NULL);
     node->value = value;
     node->next = NULL;
     node->prev = NULL;
@@ -63,8 +61,7 @@ t_list_node *tlist_add_before(t_list *list, t_list_node *after, void *value)
 
     if (list == NULL)
         return NULL;
-    if ((node = tcalloc(1, sizeof(t_list_node))) == NULL)
-        return NULL;
+    t_assert((node = tcalloc(1, sizeof(t_list_node))) == NULL);
     node->value = value;
     node->next = NULL;
     node->prev = NULL;
@@ -82,8 +79,7 @@ t_list_node *tlist_add_top(t_list *list, void *value)
 
     if (list == NULL)
         return NULL;
-    if ((node = tcalloc(1, sizeof(t_list_node))) == NULL)
-        return NULL;
+    t_assert((node = tcalloc(1, sizeof(t_list_node))) == NULL);
     if (list->head == NULL)
         return tlist_add(list, value);
     after = list->head;

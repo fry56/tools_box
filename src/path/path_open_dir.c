@@ -10,6 +10,7 @@
 #include <t_mem.h>
 #include <t_string.h>
 #include <dirent.h>
+#include <t_assert.h>
 
 static void read_content(tdir_s *new_dir)
 {
@@ -26,18 +27,10 @@ tdir_s *tpath_open_dir(char *path)
 
     if (dd == NULL)
         return NULL;
-    if ((new_dir = tcalloc(1, sizeof(tdir_s))) == NULL) {
-        closedir(dd);
-        return NULL;
-    }
+    t_assert((new_dir = tcalloc(1, sizeof(tdir_s))) == NULL);
     new_dir->dd = dd;
     new_dir->path = tstr_cpy(NULL, path);
-    if ((new_dir->content = tlist_new()) == NULL) {
-        free(new_dir->path);
-        free(new_dir);
-        closedir(dd);
-        return NULL;
-    }
+    new_dir->content = tlist_new();
     read_content(new_dir);
     return new_dir;
 }

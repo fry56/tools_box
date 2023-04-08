@@ -59,7 +59,7 @@ static int get_node_inner_text(t_xml_node *node, char *buf)
         if (buf[index] == '<')
             break;
     }
-    if (index > 2)
+    if (index > 0)
         node->inner_text = tstr_ncpy(NULL, buf, index - 1);
     return index;
 }

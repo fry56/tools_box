@@ -99,7 +99,13 @@ SRC = \
 	src/xml/xml_get_balise.c \
 	src/xml/xml_get_content.c \
 	\
-	src/assert/assert.c
+	src/assert/assert.c \
+	\
+	src/xml_token/xml_load.c \
+	src/xml_token/xml_free.c \
+	src/xml_token/xml_node.c \
+	src/xml_token/xml_parser.c \
+	src/xml_token/xml_function.c \
 
 OBJ = $(SRC:.c=.o)
 

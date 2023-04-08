@@ -12,23 +12,24 @@
 
 static void get_node_tag_attribute(t_xml_node *node, char *buf)
 {
-    char *match;
+    char *match = tstr_match(buf, " .*=\".*\"");;
     int key_end, attribute_end;
     t_xml_attribute *temp;
 
-    for (int i = 0; buf[i] != '>'; ++i) {
-        match = tstr_match(buf + i, " .*=\".*\"");
-        if (match == NULL)
-            return;
-        temp = tcalloc(1, sizeof(t_xml_attribute));
-        tassert(temp == NULL);
+    if (match == NULL)
+        return;
+    while (match++) {
+        tassert((temp = tcalloc(1, sizeof(t_xml_attribute))) == NULL);
         key_end = tstr_index_of(match, "=\"");
-        temp->key = tstr_ncpy(NULL, match, key_end - i - 1);
+        temp->key = tstr_ncpy(NULL, match, key_end - 1);
         attribute_end = tstr_index_of(match + key_end + 2, "\"");
-        temp->value =
-                tstr_ncpy(NULL, match + key_end + 2, attribute_end - 1);
+        temp->value = tstr_ncpy(NULL, match + key_end + 2, attribute_end - 1);
         tlist_add(node->list_attributes, temp);
-        i += attribute_end + key_end + 3;
+        if (*(match + key_end + 2 + attribute_end + 1) == '>')
+            return;
+        if ((match = tstr_match(match + key_end + attribute_end + 3,
+            " .*=\".*\"")) == NULL)
+            return;
     }
 }
 
@@ -55,11 +56,11 @@ static int get_node_inner_text(t_xml_node *node, char *buf)
     int index = 0;
 
     for (; buf[index] != '\0'; ++index) {
-        if (buf[index + 1] == '<')
+        if (buf[index] == '<')
             break;
     }
-    if (index >= 0)
-        node->inner_text = tstr_ncpy(NULL, buf, index);
+    if (index > 2)
+        node->inner_text = tstr_ncpy(NULL, buf, index - 1);
     return index;
 }
 
@@ -69,7 +70,7 @@ int t_xml_token_is_valide_end_tag(char *buf, t_xml_node *current, size_t *index)
 
     if (buf[*index + 1] == '/') {
         temp_len = tstr_len(current->tag);
-        if (tstr_ncmp(current->tag, buf + (*index + 2), temp_len) != 0 ||
+        if (tstr_ncmp(current->tag, buf + (*index + 2), temp_len - 1) != 0 ||
             *(buf + (*index + 2 + temp_len)) != '>')
             return 0;
         *index += temp_len;
